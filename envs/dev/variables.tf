@@ -1,4 +1,4 @@
-
+# VPC module variables
 variable "name_prefix" {
   description = "Name prefix for tagging and resource naming"
   type        = string
@@ -27,4 +27,26 @@ variable "private_subnet_cidrs" {
 variable "azs" {
   description = "List of availability zones to spread resources across"
   type        = list(string)
+}
+
+# Bastion host module variables
+variable "ami_id" {
+  description = "AMI ID for the bastion host"
+  type        = string
+}
+
+variable "instance_type" {
+  description = "Instance type for the bastion host"
+  type        = string
+  default     = "t3.medium"
+}
+
+variable "key_name" {
+  description = "SSH key pair name for accessing the bastion host"
+  type        = string
+}
+
+variable "allowed_ssh_cidr" {
+  description = "CIDR block allowed to SSH into the bastion host"
+  type        = string
 }
