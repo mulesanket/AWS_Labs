@@ -18,5 +18,5 @@ module "bastion" {
   ami_id           = var.ami_id
   instance_type    = var.instance_type
   key_name         = var.key_name
-  allowed_ssh_cidr = "YOUR.PUBLIC.IP.ADDRESS/32"
+  allowed_ssh_cidr = var.allowed_ssh_cidr
 }
